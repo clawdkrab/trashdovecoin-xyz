@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- custom -->
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trash Dove ($TRASHDOVE) | Trash Dove has joined the chat</title>
+<meta name="description" content="$TRASHDOVE: the purple pigeon that headbanged through every comment section of 2017, now a meme coin on Solana. No thoughts. Only neck.">
+<meta name="theme-color" content="#5b3f8c">
+<meta property="og:title" content="Trash Dove ($TRASHDOVE)">
+<meta property="og:description" content="Trash Dove has joined the chat. The 2017 headbang pigeon, now on Solana.">
+<meta property="og:image" content="banner.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Lilita+One&display=swap" rel="stylesheet">
+<style>
+:where(img){height:auto}
+:root{--top:#5b3f8c;--top2:#4a3275;--bg:#e9e6ef;--card:#fff;--line:#dcd7e3;--txt:#1d2129;--dim:#7a7488;--link:#6a3fb5;--like:#7b4fd0;--yel:#ffd84a;
+--ui:"Segoe UI",Helvetica,Arial,sans-serif;--comic:"Comic Neue","Comic Sans MS","Comic Sans",cursive;--fat:"Lilita One",Impact,sans-serif}
+*{box-sizing:border-box}
+html,body{overflow-x:hidden}@supports (overflow:clip){html,body{overflow-x:clip}}
+body{margin:0;background:var(--bg);color:var(--txt);font:14px/1.45 var(--ui)}
+img{max-width:100%;display:block}
+a{color:var(--link);text-decoration:none}
+a:hover{text-decoration:underline}
+button{font:inherit;cursor:pointer}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+/* ===== parallax dove sky ===== */
+#sky{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.layer{position:absolute;left:0;top:0;width:100%;height:400vh;will-change:transform}
+.layer img{position:absolute;mix-blend-mode:multiply;opacity:.16}
+.l1 img{width:70px;opacity:.12;filter:blur(1.5px)}
+.l2 img{width:120px;opacity:.16;filter:blur(.6px)}
+.l3 img{width:190px;opacity:.2}
+
+/* ===== top bar ===== */
+.bar{position:sticky;top:0;z-index:40;background:var(--top);border-bottom:1px solid var(--top2);box-shadow:0 2px 0 rgba(0,0,0,.08)}
+.bar-in{max-width:1180px;margin:0 auto;display:flex;align-items:center;gap:12px;height:46px;padding:0 12px}
+.logo{font:800 26px/1 var(--ui);color:#fff;letter-spacing:-1px}
+.logo:hover{text-decoration:none}
+.search{flex:1;max-width:380px;background:#fff;border:0;border-radius:3px;padding:6px 10px;color:var(--dim);font-size:13px;white-space:nowrap;overflow:hidden}
+.icons{display:flex;gap:4px;margin-left:auto;align-items:center}
+.ic{position:relative;width:32px;height:30px;display:grid;place-items:center;color:#d8cdef;font-size:17px;border-radius:4px}
+.ic b{position:absolute;top:-2px;right:-6px;background:#fa3e3e;color:#fff;font:700 10px/1 var(--ui);padding:2px 4px;border-radius:8px;border:2px solid var(--top)}
+.topbuy{background:var(--yel);color:#2a1a00;font:700 13px var(--ui);padding:6px 12px;border-radius:3px;border:1px solid #c9a51b;white-space:nowrap}
+.topbuy:hover{text-decoration:none;filter:brightness(1.05)}
+
+/* ===== layout ===== */
+.wrap{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:14px 12px 40px;display:grid;grid-template-columns:190px minmax(0,1fr) 260px;gap:14px}
+.left,.right{position:sticky;top:60px;align-self:start}
+.left a{display:flex;gap:8px;align-items:center;padding:5px 6px;color:var(--txt);font-size:13px;border-radius:4px}
+.left a:hover{background:#ddd5ea;text-decoration:none}
+.left small{display:block;color:var(--dim);font-size:11px;text-transform:uppercase;letter-spacing:.06em;margin:12px 6px 4px}
+.mini{width:22px;height:22px;border-radius:50%;object-fit:cover;object-position:30% 40%;background:#fff}
+.box{background:var(--card);border:1px solid var(--line);border-radius:4px;margin-bottom:12px}
+.box h4{margin:0;padding:9px 12px;font-size:12px;color:var(--dim);text-transform:uppercase;letter-spacing:.04em;border-bottom:1px solid var(--line)}
+.box .in{padding:10px 12px}
+
+/* ===== posts ===== */
+.post{background:var(--card);border:1px solid var(--line);border-radius:4px;margin-bottom:14px}
+.ph{display:flex;gap:9px;align-items:center;padding:12px 12px 6px}
+.av{width:42px;height:42px;border-radius:50%;object-fit:cover;object-position:30% 35%;border:1px solid var(--line);background:#fff}
+.who{font-weight:700;color:var(--link)}
+.meta{color:var(--dim);font-size:12px}
+.pb{padding:4px 12px 10px}
+.react{display:flex;justify-content:space-between;color:var(--dim);font-size:12px;padding:8px 12px;border-top:1px solid var(--line)}
+.emo{letter-spacing:-3px;margin-right:6px}
+.acts{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);margin:0 12px}
+.acts a,.acts button{background:none;border:0;color:var(--dim);font-weight:700;font-size:13px;padding:8px;text-align:center;border-radius:3px}
+.acts a:hover,.acts button:hover{background:#f0ecf6;text-decoration:none}
+.acts .liked{color:var(--like)}
+
+/* composer */
+.comp{padding:10px 12px}
+.comp .row{display:flex;gap:9px;align-items:center}
+.comp .fake{flex:1;border:0;font:18px var(--ui);color:var(--dim);min-height:24px}
+.comp .fake i{display:inline-block;width:2px;height:18px;background:var(--txt);vertical-align:-3px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.comp .tabs{display:flex;gap:16px;border-top:1px solid var(--line);margin-top:10px;padding-top:8px;font-size:12px;color:var(--dim);font-weight:700}
+
+/* hero post */
+.hero h1{font:400 clamp(44px,8vw,86px)/.9 var(--fat);margin:6px 0 2px;color:var(--top);letter-spacing:.01em;text-shadow:3px 3px 0 var(--yel)}
+.hero .tick{display:inline-block;background:var(--txt);color:var(--yel);font:700 13px var(--ui);padding:3px 8px;border-radius:2px;letter-spacing:.08em}
+.hero .tag{font:700 20px/1.3 var(--comic);margin:10px 0 0}
+.stage{position:relative;background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden}
+.stage img{width:100%;max-width:640px;margin:0 auto;mix-blend-mode:multiply}
+.bang{transform-origin:40% 95%;animation:bang .46s ease-in-out infinite alternate}
+@keyframes bang{from{transform:rotate(-7deg) translateY(4px)}to{transform:rotate(5deg) translateY(-6px)}}
+.bob{animation:bob .46s ease-in-out infinite alternate}
+@keyframes bob{from{transform:translateY(0)}to{transform:translateY(-3px)}}
+body.still .bang,body.still .bob{animation:none}
+.gif{position:absolute;left:10px;top:10px;background:rgba(0,0,0,.65);color:#fff;font:700 11px var(--ui);padding:2px 6px;border-radius:3px}
+.bigbuy{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+.btn{display:inline-block;background:var(--like);color:#fff;font:700 15px var(--ui);padding:10px 18px;border-radius:4px;border:1px solid #5a33a6;box-shadow:inset 0 1px 0 rgba(255,255,255,.3)}
+.btn:hover{text-decoration:none;filter:brightness(1.1)}
+.btn.alt{background:#f5f3f8;color:var(--txt);border-color:var(--line)}
+
+/* comments */
+.cmts{background:#f6f4f9;border-top:1px solid var(--line);padding:8px 12px 10px}
+.cm{display:flex;gap:7px;margin:7px 0}
+.cm .av{width:32px;height:32px}
+.cm .bub{background:#ebe6f2;border-radius:16px;padding:6px 11px;font-size:13px;max-width:100%}
+.cm .bub b{color:var(--link);margin-right:4px}
+.cm .stk{width:110px;margin-top:4px;mix-blend-mode:multiply}
+.cm .sub{font-size:11px;color:var(--dim);margin:2px 0 0 10px}
+.cm .sub a{font-weight:700;margin-right:8px}
+.rep{margin-left:38px}
+.more{background:none;border:0;color:var(--link);font-weight:700;font-size:13px;padding:6px 0}
+.write{display:flex;gap:7px;align-items:center;margin-top:8px}
+.write span{flex:1;border:1px solid var(--line);background:#fff;border-radius:16px;padding:6px 12px;color:var(--dim);font-size:13px}
+
+/* note (lore) */
+.note h2{font:400 34px/1.05 var(--fat);color:var(--top);margin:4px 0 10px}
+.note p{font-size:15.5px;line-height:1.65;margin:0 0 12px}
+.note .pull{font:700 22px/1.25 var(--comic);color:var(--like);border-left:5px solid var(--yel);padding:4px 0 4px 12px;margin:14px 0}
+
+/* album */
+.album{display:grid;grid-template-columns:repeat(4,1fr);gap:3px;padding:0 12px 12px}
+.album button{border:0;padding:0;background:#fff;aspect-ratio:1;overflow:hidden;position:relative}
+.album img{width:100%;height:100%;object-fit:cover;object-position:35% 40%;transition:transform .25s}
+.album button:hover img{transform:scale(1.08) rotate(-2deg)}
+.album button:nth-child(1){grid-column:span 2;grid-row:span 2}
+.album .cap{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(transparent,rgba(0,0,0,.7));color:#fff;font:700 11px var(--ui);padding:14px 6px 4px;text-align:left}
+
+/* theater */
+#th{position:fixed;inset:0;z-index:80;background:rgba(10,6,18,.92);display:none;align-items:center;justify-content:center;padding:20px}
+#th.on{display:flex}
+#th figure{margin:0;background:#fff;max-width:900px;width:100%;border-radius:4px;overflow:hidden}
+#th img{width:100%;max-height:70vh;object-fit:contain;background:#000}
+#th figcaption{padding:10px 14px;font-size:13px;display:flex;justify-content:space-between;gap:10px;align-items:center}
+#th .x{position:absolute;top:12px;right:16px;background:none;border:0;color:#fff;font-size:30px}
+#th .nav{background:#fff;border:1px solid var(--line);border-radius:3px;padding:4px 10px}
+
+/* event */
+.ev{display:grid;grid-template-columns:64px 1fr;gap:12px;padding:6px 12px 12px}
+.cal{border:1px solid var(--line);border-radius:4px;text-align:center;overflow:hidden;height:max-content}
+.cal b{display:block;background:#fa3e3e;color:#fff;font-size:11px;padding:2px}
+.cal span{display:block;font:400 28px/1.4 var(--fat)}
+.ev h3{margin:0 0 4px;font-size:18px}
+.ev ol{margin:8px 0 0;padding-left:20px}
+.ev li{margin:6px 0;font-size:14.5px}
+.ev li b{color:var(--top)}
+.going{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+
+/* about / toks */
+.toks{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;padding:4px 12px 12px}
+.tk{border:1px solid var(--line);border-radius:4px;padding:10px;background:#faf9fc}
+.tk small{display:block;color:var(--dim);font-size:11px;text-transform:uppercase;letter-spacing:.05em}
+.tk b{font:400 24px var(--fat);color:var(--top)}
+
+/* CA pinned */
+.pin{border:2px dashed var(--like);background:#fbf9ff}
+.cabox{display:flex;gap:8px;margin:6px 12px 12px;flex-wrap:wrap}
+.cabox code{flex:1;min-width:200px;background:#1d1530;color:var(--yel);padding:11px 12px;border-radius:4px;font:13px/1.3 ui-monospace,Menlo,Consolas,monospace;word-break:break-all}
+
+/* pages you may like */
+.pages{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:4px 12px 12px}
+.pg{border:1px solid var(--line);border-radius:4px;text-align:center;padding:12px 6px;color:var(--txt);font-weight:700;font-size:13px;background:#faf9fc}
+.pg:hover{text-decoration:none;border-color:var(--like)}
+.pg i{display:block;font-style:normal;font-size:26px;margin-bottom:4px}
+.pg small{display:block;color:var(--like);font-weight:400;margin-top:4px}
+
+/* right column */
+.trend a{display:block;padding:4px 0;font-size:13px}
+.trend small{color:var(--dim);display:block;font-size:11px}
+.ad img{mix-blend-mode:multiply}
+.ad p{margin:6px 0 0;font-size:12.5px}
+.counter{display:flex;gap:2px;justify-content:center;margin-top:6px}
+.counter span{background:#000;color:#3f3;font:700 15px/1 ui-monospace,Menlo,monospace;padding:4px 3px;border:1px inset #666}
+.ie{display:block;text-align:center;font:700 11px/1.2 var(--comic);background:linear-gradient(#fff,#d9d2e6);border:2px outset #cfc6dd;padding:6px;margin-top:8px}
+.mq{overflow:hidden;white-space:nowrap;background:var(--yel);font:700 12px var(--comic);padding:3px 0;border-top:1px solid #c9a51b;border-bottom:1px solid #c9a51b}
+.mq span{display:inline-block;padding-left:100%;animation:mq 16s linear infinite}
+@keyframes mq{to{transform:translateX(-100%)}}
+
+/* chat dock */
+.dock{position:fixed;right:14px;bottom:0;z-index:60;width:250px;background:#fff;border:1px solid var(--line);border-bottom:0;border-radius:6px 6px 0 0;box-shadow:0 -2px 12px rgba(40,20,80,.15);font-size:12.5px}
+.dock header{background:var(--top);color:#fff;font-weight:700;padding:7px 10px;border-radius:6px 6px 0 0;display:flex;justify-content:space-between;cursor:pointer}
+.dock header i{display:inline-block;width:8px;height:8px;background:#42b72a;border-radius:50%;margin-right:6px}
+.dock .log{height:150px;overflow-y:auto;padding:8px}
+.dock.min .log{display:none}
+.msg{background:#ebe6f2;border-radius:12px;padding:5px 9px;margin:4px 0;width:max-content;max-width:90%}
+.msg.sys{background:none;color:var(--dim);font-style:italic;padding:2px 0;text-align:center;width:auto}
+
+/* friend request popup */
+#fr{position:fixed;left:50%;top:90px;z-index:70;width:min(340px,92vw);transform:translate(-50%,-30px);opacity:0;pointer-events:none;transition:.35s;background:#fff;border:1px solid #9b8fb3;border-radius:4px;box-shadow:0 10px 40px rgba(30,10,60,.35)}
+#fr.on{opacity:1;transform:translate(-50%,0);pointer-events:auto}
+#fr header{background:var(--top);color:#fff;font-weight:700;padding:7px 10px;display:flex;justify-content:space-between}
+#fr header button{background:none;border:0;color:#fff;font-size:18px;line-height:1}
+#fr .bd{display:flex;gap:10px;padding:12px;align-items:center}
+#fr .bd img{width:64px;height:64px;object-fit:cover;object-position:30% 35%;border-radius:4px;mix-blend-mode:multiply}
+#fr .ft{display:flex;gap:6px;padding:0 12px 12px;justify-content:flex-end}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .6s,transform .6s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+
+footer{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:0 12px 120px;color:var(--dim);font-size:12px}
+footer .links{display:flex;flex-wrap:wrap;gap:4px 12px;border-bottom:1px solid var(--line);padding-bottom:8px;margin-bottom:8px}
+footer .links a{color:var(--dim)}
+footer p{margin:6px 0}
+
+@media (max-width:1020px){.wrap{grid-template-columns:minmax(0,1fr) 240px}.left{display:none}}
+@media (max-width:760px){.wrap{grid-template-columns:1fr}.right{position:static}.search,.icons .ic:nth-child(n+2){display:none}.album{grid-template-columns:repeat(3,1fr)}.pages{grid-template-columns:repeat(2,1fr)}.dock{width:200px}.dock .log{height:110px}}
+@media (prefers-reduced-motion:reduce){.bang,.bob,.mq span,.comp .fake i{animation:none!important}.rv{opacity:1;transform:none;transition:none}.layer{transform:none!important}}
+</style>
+</head>
+<body>
+
+<div id="sky" aria-hidden="true"><div class="layer l1" data-speed=".15"></div><div class="layer l2" data-speed=".35"></div><div class="layer l3" data-speed=".6"></div></div>
+
+<div class="bar">
+<div class="bar-in">
+<a class="logo" href="#top">dovebook</a>
+<div class="search" aria-hidden="true">&#128269; Search for more doves</div>
+<div class="icons">
+<span class="ic" title="Friend requests">&#128101;<b>1</b></span>
+<span class="ic" title="Messages">&#128172;<b>99+</b></span>
+<span class="ic" title="Notifications">&#127760;<b id="notif">4</b></span>
+<a class="topbuy" href="#buy">Buy $TRASHDOVE</a>
+</div>
+</div>
+</div>
+
+<div class="wrap" id="top">
+<aside class="left" aria-label="Shortcuts">
+<a href="#top"><img class="mini" src="logo.png" alt="">Trash Dove</a>
+<a href="#feed">&#128240; News Feed</a>
+<a href="#lore">&#128221; Notes</a>
+<a href="#album">&#128247; Photos</a>
+<a href="#buy">&#128197; Events <b style="color:#fa3e3e">1</b></a>
+<small>Groups</small>
+<a href="#feed">&#129304; Headbangers Anonymous</a>
+<a href="#feed">&#128038; Pigeons of 2017</a>
+<a href="#ca">&#128204; Pinned: The CA</a>
+<small>Pages</small>
+<a href="#socials">&#128077; Like us (please)</a>
+</aside>
+
+<main id="feed">
+<!-- composer -->
+<div class="post comp rv">
+<div class="row"><img class="av" src="logo.png" alt=""><div class="fake" aria-live="off"><span id="typed"></span><i></i></div></div>
+<div class="tabs"><span>&#128247; Photo/Video</span><span>&#128512; Feeling/Activity: headbanging</span><span>&#128205; Check in</span></div>
+</div>
+
+<!-- HERO POST -->
+<article class="post hero rv">
+<div class="ph"><img class="av bob" src="logo.png" alt="Trash Dove avatar"><div><a class="who" href="#top">Trash Dove</a> <span class="meta">is feeling &#129304; headbangy</span><div class="meta">February 2017 (and also right now) &middot; &#127760;</div></div></div>
+<div class="pb">
+<h1>Trash Dove</h1>
+<span class="tick">$TRASHDOVE &middot; SOLANA</span>
+<p class="tag">the purple pigeon that headbanged through every comment section of 2017 is back. no thoughts. only neck.</p>
+<div class="bigbuy"><a class="btn" href="#buy">&#128077; Like (Buy) $TRASHDOVE</a><a class="btn alt" href="#lore">Read the lore</a><button class="btn alt" id="still" type="button">&#9208; Stop headbanging</button></div>
+</div>
+<div class="stage"><span class="gif">GIF</span><img class="bang" src="meme_01.jpg" alt="Trash Dove, a purple pigeon with its tongue out, headbanging"></div>
+<div class="react"><span><span class="emo">&#128077;&#128518;&#128558;</span><span id="likes">Dove and 4,201,337 others</span></span><span>69,420 Comments &middot; 9,001 Shares</span></div>
+<div class="acts"><button type="button" id="likeBtn">&#128077; Like</button><a href="#cmts">&#128172; Comment</a><button type="button" id="shareBtn">&#8618; Share</button></div>
+<div class="cmts" id="cmts">
+<div class="cm"><img class="av" src="remix_04.jpg" alt=""><div><div class="bub"><b>Karen W.</b>can everyone PLEASE stop posting this bird</div><div class="sub"><a href="#cmts">Like</a><a href="#cmts">Reply</a>2y</div>
+<div class="cm rep"><img class="av" src="logo.png" alt=""><div><div class="bub"><b>Trash Dove</b></div><img class="stk bang" src="meme_02.jpg" alt="dove sticker"></div></div>
+</div></div>
+<div class="cm"><img class="av" src="remix_02.jpg" alt=""><div><div class="bub"><b>Uncle Dave</b>what does it MEAN</div><div class="sub"><a href="#cmts">Like</a><a href="#cmts">Reply</a>2y</div>
+<div class="cm rep"><img class="av" src="logo.png" alt=""><div><div class="bub"><b>Trash Dove</b></div><img class="stk bang" src="remix_03.jpg" alt="dove sticker"></div></div>
+</div></div>
+<div class="cm"><img class="av" src="remix_01.jpg" alt=""><div><div class="bub"><b>Dove Enjoyer</b>this is the only post i will ever like</div><div class="sub"><a href="#cmts">Like</a><a href="#cmts">Reply</a>1y</div></div></div>
+<div id="moreC"></div>
+<button class="more" id="loadMore" type="button">View 69,417 more replies</button>
+<div class="write"><img class="av" src="logo.png" alt="" style="width:32px;height:32px"><span>Write a comment... (it will be a dove)</span></div>
+</div>
+</article>
+
+<!-- LORE NOTE -->
+<article class="post note rv" id="lore">
+<div class="ph"><img class="av" src="logo.png" alt=""><div><a class="who" href="#lore">Trash Dove</a> <span class="meta">published a note.</span><div class="meta">Notes &middot; 7 min read (3 if you headbang)</div></div></div>
+<div class="pb">
+<h2>The Lore of the Trash Dove</h2>
+<p>In early 2017 a purple pigeon with huge yellow eyes, a tongue like a party blower and absolutely zero thoughts appeared in a sticker pack. Its one move: the headbang. Bob, bob, bob, forever, with its wings out like it was presenting you with nothing at all.</p>
+<p>Then it got loose. Someone dropped it in a comment section. Someone else replied with it. Then everyone replied with it. Within weeks entire threads were just this dove, headbanging, over and over, often next to a dancing cat, under posts about politics, birthdays, funerals, sports results and your aunt's lasagne.</p>
+<p class="pull">Nobody asked for the dove. The dove came anyway.</p>
+<p>People begged for it to stop. People wrote think pieces about it. People got banned from their own family group chats. The dove did not stop, because the dove does not understand the concept of stopping. It only understands the beat.</p>
+<p>Now it has found the blockchain. <b>$TRASHDOVE</b> is a meme coin on Solana for everyone who remembers when the internet was just one bird ruining every conversation at once. There is no roadmap. There is only the neck, and the neck is going up and down.</p>
+<p>Every red candle: headbang. Every green candle: headbang. Somebody posts FUD: reply with the dove. That's the whole utility. That has always been the whole utility.</p>
+</div>
+<div class="acts"><button type="button" class="lk">&#128077; Like</button><a href="#cmts">&#128172; Comment</a><a href="#album">&#128247; See photos</a></div>
+</article>
+
+<!-- ALBUM -->
+<article class="post rv" id="album">
+<div class="ph"><img class="av" src="logo.png" alt=""><div><a class="who" href="#album">Trash Dove</a> <span class="meta">added 8 new photos to the album <a href="#album">Headbang Archive (DO NOT OPEN)</a>.</span><div class="meta">Just now &middot; &#127760;</div></div></div>
+<div class="album" id="alb"></div>
+<div class="acts"><button type="button" class="lk">&#128077; Like</button><a href="#cmts">&#128172; Comment</a><button type="button" id="shuffle">&#128256; Shuffle</button></div>
+</article>
+
+<!-- EVENT: HOW TO BUY -->
+<article class="post rv" id="buy">
+<div class="ph"><img class="av" src="logo.png" alt=""><div><a class="who" href="#buy">Trash Dove</a> <span class="meta">created an event.</span><div class="meta">Public &middot; Hosted by Trash Dove and your worst decisions</div></div></div>
+<div class="ev">
+<div class="cal"><b>LAUNCH</b><span>&#128038;</span></div>
+<div>
+<h3>How to buy $TRASHDOVE (headbanging encouraged)</h3>
+<div class="meta">Location: Solana &middot; Dress code: purple</div>
+<ol>
+<li><b>Get Phantom.</b> Download the Phantom wallet app or browser extension. Write your seed phrase on paper. Tell nobody. Not even the dove.</li>
+<li><b>Get SOL.</b> Buy SOL on an exchange and send it to your Phantom address.</li>
+<li><b>Go to pump.fun.</b> Open pump.fun and connect your Phantom wallet.</li>
+<li><b>Paste the CA.</b> Copy the official contract address from the <a href="#ca">pinned post</a> below and paste it into the search. Check it twice.</li>
+<li><b>Buy &amp; headbang.</b> Choose your amount, confirm in Phantom, then reply to every post you see with the dove.</li>
+</ol>
+<div class="going"><a class="btn" href="#ca">&#10003; Going</a><button class="btn alt lk" type="button">&#9733; Interested</button><span class="meta" style="align-self:center">4.2M going &middot; 0 thoughts</span></div>
+</div>
+</div>
+</article>
+
+<!-- ABOUT / TOKENOMICS -->
+<!-- only keep these claims if true at launch -->
+<article class="post rv" id="toks">
+<div class="ph"><img class="av" src="logo.png" alt=""><div><a class="who" href="#toks">Trash Dove</a> <span class="meta">updated their About info.</span><div class="meta">Intro</div></div></div>
+<div class="toks">
+<div class="tk"><small>Total supply</small><b>1,000,000,000</b></div>
+<div class="tk"><small>Launch</small><b>Fair launch</b><br><span class="meta">on pump.fun</span></div>
+<div class="tk"><small>Relationship status</small><b>It's complicated</b><br><span class="meta">with the dancing cat</span></div>
+<div class="tk"><small>Works at</small><b>Your comments</b><br><span class="meta">full time, unpaid</span></div>
+</div>
+</article>
+
+<!-- PINNED CA -->
+<article class="post pin rv" id="ca">
+<div class="ph"><img class="av" src="logo.png" alt=""><div><a class="who" href="#ca">Trash Dove</a> <span class="meta">&#128204; pinned a post</span><div class="meta">Only trust this one. Imposter doves exist.</div></div></div>
+<div class="cabox"><code id="caText">Contract address revealed at launch</code><button class="btn" id="copyCA" type="button">Copy</button></div>
+</article>
+
+<!-- SOCIALS -->
+<article class="post rv" id="socials">
+<div class="ph"><img class="av" src="logo.png" alt=""><div><span class="who">Pages you may like</span><div class="meta">Because you headbanged recently</div></div></div>
+<div class="pages">
+<a class="pg" href="#"><i>&#120143;</i>X / Twitter<small>Follow</small></a>
+
+<a class="pg" href="#"><i>&#128138;</i>pump.fun<small>Visit</small></a>
+<a class="pg" href="#"><i>&#128200;</i>DexScreener<small>Chart</small></a>
+</div>
+</article>
+</main>
+
+<aside class="right" aria-label="Sidebar">
+<div class="box trend"><h4>Trending</h4><div class="in">
+<a href="#feed">#TrashDove<small>4.2M people are headbanging about this</small></a>
+<a href="#lore">Bird Ruins Comment Section<small>Still happening, sources say</small></a>
+<a href="#buy">$TRASHDOVE<small>Solana &middot; pump.fun</small></a>
+</div><div class="mq"><span>&#9733; WELCOME TO MY PAGE &#9733; NO THOUGHTS ONLY NECK &#9733; SIGN MY GUESTBOOK (IT IS ALSO A DOVE) &#9733; NEW!! NEW!! NEW!! &#9733;</span></div></div>
+<div class="box ad"><h4>Sponsored</h4><div class="in"><img class="bang" src="remix_06.jpg" alt="$TRASHDOVE ad"><p><b>Doves in your area want to headbang.</b> Click here to find out why your neck hurts.</p><a class="btn" href="#buy" style="margin-top:8px;font-size:13px;padding:7px 12px">Learn more</a></div></div>
+<div class="box"><h4>Visitors</h4><div class="in"><div class="counter" id="hits"></div><span class="ie">Best viewed at 1024x768<br>in a browser from 2017 &#128038;</span></div></div>
+</aside>
+</div>
+
+<footer>
+<div class="links"><a href="#top">About</a><a href="#ca">Contract</a><a href="#buy">How to buy</a><a href="#socials">Pages</a><a href="#lore">Notes</a><span>dovebook &copy; 2017-forever</span></div>
+<p><b>$TRASHDOVE is a meme coin with no intrinsic value and no expectation of financial return.</b> It is for entertainment only. Nothing here is financial advice. Crypto is risky; only spend what you can afford to lose entirely.</p>
+<p>Fan-made tribute. Not affiliated with, endorsed by or connected to Syd Weiler (the artist who drew the original Trash Dove), any sticker platform, or any social network. "dovebook" is a parody.</p>
+</footer>
+
+<div class="dock" id="dock"><header id="dockH"><span><i></i>Trash Dove</span><span>&#8211;</span></header><div class="log" id="log" aria-live="polite"><div class="msg sys">Trash Dove has joined the chat</div></div></div>
+
+<div id="fr" role="dialog" aria-labelledby="frT"><header><span id="frT">1 new friend request</span><button type="button" class="frx" aria-label="Close">&times;</button></header>
+<div class="bd"><img src="remix_01.jpg" alt=""><div><b>Trash Dove</b><div class="meta">4,201,337 mutual doves</div><div class="meta">"we have so much in common (neck)"</div></div></div>
+<div class="ft"><a class="btn frx" href="#buy" style="font-size:13px;padding:6px 12px">Confirm</a><button type="button" class="btn alt frx" style="font-size:13px;padding:6px 12px">Delete (also confirms)</button></div>
+</div>
+
+<div id="th" role="dialog" aria-label="Photo viewer"><button class="x" type="button" aria-label="Close">&times;</button>
+<figure><img id="thImg" src="meme_01.jpg" alt=""><figcaption><span id="thCap"></span><span><button class="nav" type="button" id="thP">&larr; Prev</button> <button class="nav" type="button" id="thN">Next &rarr;</button></span></figcaption></figure>
+</div>
+
+<script>
+const CA = ""; // paste the real contract address here at launch
+(function(){
+"use strict";
+var RM = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+var $ = function(s){return document.querySelector(s)};
+var $$ = function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+var IMGS = [
+["meme_01.jpg","The original headbang. Peak 2017."],
+["meme_02.jpg","Cropped for maximum comment-section spam."],
+["remix_01.jpg","Saturated. Like your feed in 2017."],
+["remix_02.jpg","Pixel dove (dial-up edition)."],
+["remix_03.jpg","Mirror dove sees mirror dove. Both headbang."],
+["remix_04.jpg","Duotone dove for serious occasions."],
+["remix_05.jpg","HEADBANG $TRASHDOVE (caption by dove)"],
+["remix_06.jpg","Deep-fried dove. Do not microwave twice."]
+];
+
+/* ---- parallax dove sky ---- */
+var seed = 7; function rnd(){ seed = (seed*16807)%2147483647; return (seed-1)/2147483646; }
+var layers = $$(".layer");
+layers.forEach(function(L,li){
+var n = [14,9,6][li];
+for(var i=0;i<n;i++){
+var im = document.createElement("img");
+im.src = "" + (i%3===0 ? "logo.png" : IMGS[Math.floor(rnd()*IMGS.length)][0]);
+im.alt = ""; im.loading = "lazy";
+im.style.left = (rnd()*92) + "%"; im.style.top = (rnd()*96) + "%";
+im.style.transform = "rotate(" + Math.round(rnd()*40-20) + "deg)" + (rnd()>.5 ? " scaleX(-1)" : "");
+L.appendChild(im);
+}
+});
+var ticking = false;
+function para(){
+ticking = false;
+var y = window.pageYOffset;
+layers.forEach(function(L){ L.style.transform = "translate3d(0," + (-y*parseFloat(L.dataset.speed)) + "px,0)"; });
+}
+if(!RM){ window.addEventListener("scroll", function(){ if(!ticking){ ticking = true; requestAnimationFrame(para); } }, {passive:true}); para(); }
+
+/* ---- reveal + section chat events ---- */
+var log = $("#log");
+function say(t, sys){
+var d = document.createElement("div"); d.className = "msg" + (sys ? " sys" : ""); d.textContent = t;
+log.appendChild(d); log.scrollTop = log.scrollHeight;
+var n = $("#notif"); n.textContent = (parseInt(n.textContent,10)||0) + 1;
+}
+var lines = {lore:"have u read my note. it is about me", album:"look at my photos. they are all me", buy:"u are invited to my event (mandatory)", toks:"1,000,000,000 doves. i counted", ca:"pinned it for u :)", socials:"like my pages or i will headbang louder"};
+var said = {};
+if("IntersectionObserver" in window){
+var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add("in"); var id=e.target.id; if(lines[id] && !said[id]){ said[id]=1; say(lines[id]); } } }); }, {threshold:.15});
+$$(".rv").forEach(function(el){ io.observe(el); });
+} else { $$(".rv").forEach(function(el){ el.classList.add("in"); }); }
+
+/* ---- composer typing ---- */
+var phrases = ["headbang", "headbang headbang", "what is a thought", "buy $TRASHDOVE", "*replies to your aunt's post with dove*"];
+var tp = $("#typed"), pi = 0, ci = 0, del = false;
+function typeLoop(){
+var p = phrases[pi];
+if(!del){ ci++; if(ci > p.length){ del = true; setTimeout(typeLoop, 1300); return; } }
+else { ci--; if(ci === 0){ del = false; pi = (pi+1) % phrases.length; } }
+tp.textContent = p.slice(0, ci);
+setTimeout(typeLoop, del ? 35 : 85);
+}
+if(RM){ tp.textContent = phrases[0]; } else typeLoop();
+
+/* ---- headbang toggle ---- */
+var stillBtn = $("#still");
+stillBtn.addEventListener("click", function(){
+var s = document.body.classList.toggle("still");
+stillBtn.innerHTML = s ? "&#9654; Resume headbanging" : "&#9208; Stop headbanging";
+say(s ? "why did u stop" : "THANK YOU");
+});
+if(RM){ document.body.classList.add("still"); stillBtn.innerHTML = "&#9654; Resume headbanging"; }
+
+/* ---- likes ---- */
+var likes = 4201337, liked = false;
+$("#likeBtn").addEventListener("click", function(){
+liked = !liked; this.classList.toggle("liked", liked);
+$("#likes").textContent = (liked ? "You, Dove and " : "Dove and ") + likes.toLocaleString() + " others";
+if(liked) say("u liked my post. we are married now");
+});
+setInterval(function(){ likes += Math.floor(Math.random()*7); $("#likes").textContent = (liked ? "You, Dove and " : "Dove and ") + likes.toLocaleString() + " others"; }, 2200);
+$$(".lk").forEach(function(b){ b.addEventListener("click", function(){ b.classList.toggle("liked"); }); });
+$("#shareBtn").addEventListener("click", function(){
+var u = location.href;
+if(navigator.clipboard){ navigator.clipboard.writeText(u).then(function(){ say("link copied. go spam it", true); }, function(){}); }
+});
+
+/* ---- endless comments ---- */
+var names = ["Gary from Accounts","Mum","xX_Skater_Xx","Your Ex","A Concerned Citizen","Local News Page","Brenda (Admin)","Guy Who Only Posts Minions","Cousin Pete","The Dancing Cat"];
+var texts = ["stop","STOP","ok this is actually funny","why is it purple","I am reporting this post","my neck hurts watching this","is this crypto","the cat is better","[this comment has been removed]","who keeps doing this"];
+var more = $("#moreC"), mc = 0;
+function addComment(){
+var i = mc % names.length, img = IMGS[mc % IMGS.length][0];
+var wrap = document.createElement("div"); wrap.className = "cm rv in";
+wrap.innerHTML = '<img class="av" src="'+IMGS[(mc+3)%IMGS.length][0]+'" alt=""><div><div class="bub"><b></b><span></span></div><div class="sub"><a href="#cmts">Like</a><a href="#cmts">Reply</a>just now</div><div class="cm rep"><img class="av" src="logo.png" alt=""><div><div class="bub"><b>Trash Dove</b></div><img class="stk bang" src="'+img+'" alt="dove sticker"></div></div></div>';
+wrap.querySelector(".bub b").textContent = names[i];
+wrap.querySelector(".bub span").textContent = texts[(mc*3)%texts.length];
+more.appendChild(wrap); mc++;
+}
+$("#loadMore").addEventListener("click", function(){
+addComment(); addComment(); addComment();
+this.textContent = "View " + (69417 - mc*1).toLocaleString() + " more replies";
+if(mc === 3) say("there are more of me. there are always more of me");
+});
+
+/* ---- album + theater ---- */
+var alb = $("#alb"), cur = 0, order = IMGS.slice();
+function drawAlbum(){
+alb.innerHTML = "";
+order.forEach(function(it, i){
+var b = document.createElement("button"); b.type = "button";
+b.innerHTML = '<img src="'+it[0]+'" alt="" loading="lazy"><span class="cap"></span>';
+b.querySelector("img").alt = it[1]; b.querySelector(".cap").textContent = (i===0 ? "COVER: " : "") + it[0].replace(".jpg","");
+b.addEventListener("click", function(){ openTh(i); });
+alb.appendChild(b);
+});
+}
+drawAlbum();
+$("#shuffle").addEventListener("click", function(){ order.sort(function(){ return Math.random()-.5; }); drawAlbum(); });
+var th = $("#th");
+function showTh(){ $("#thImg").src = "" + order[cur][0]; $("#thImg").alt = order[cur][1]; $("#thCap").textContent = (cur+1) + " / " + order.length + " · " + order[cur][1]; }
+function openTh(i){ cur = i; showTh(); th.classList.add("on"); }
+function closeTh(){ th.classList.remove("on"); }
+$("#thP").addEventListener("click", function(){ cur = (cur-1+order.length)%order.length; showTh(); });
+$("#thN").addEventListener("click", function(){ cur = (cur+1)%order.length; showTh(); });
+th.addEventListener("click", function(e){ if(e.target === th || e.target.classList.contains("x")) closeTh(); });
+document.addEventListener("keydown", function(e){ if(!th.classList.contains("on")) return; if(e.key==="Escape") closeTh(); if(e.key==="ArrowRight") $("#thN").click(); if(e.key==="ArrowLeft") $("#thP").click(); });
+
+/* ---- CA ---- */
+var caText = $("#caText"), copyBtn = $("#copyCA");
+if(CA){ caText.textContent = CA; }
+copyBtn.addEventListener("click", function(){
+if(!CA){ copyBtn.textContent = "Not yet!"; say("CA not out yet. patience (headbang while u wait)"); }
+else if(navigator.clipboard){ navigator.clipboard.writeText(CA).then(function(){ copyBtn.textContent = "Copied!"; }, function(){ copyBtn.textContent = "Select it manually"; }); }
+setTimeout(function(){ copyBtn.textContent = "Copy"; }, 1600);
+});
+
+/* ---- chat dock ---- */
+var dock = $("#dock");
+$("#dockH").addEventListener("click", function(){ dock.classList.toggle("min"); });
+if(window.innerWidth < 760) dock.classList.add("min");
+var chat = ["hi","hi","headbang?","HEADBANG","the cat is typing...","the cat has left the chat","just u and me now","buy $TRASHDOVE"], k = 0;
+var chatT = setInterval(function(){ if(k >= chat.length){ clearInterval(chatT); return; } say(chat[k], chat[k].indexOf("cat")>-1); k++; }, 4200);
+
+/* ---- friend request popup ---- */
+var fr = $("#fr");
+setTimeout(function(){ fr.classList.add("on"); }, 9000);
+$$(".frx").forEach(function(b){ b.addEventListener("click", function(){ fr.classList.remove("on"); say("we are friends now. u cannot undo this"); }); });
+
+/* ---- hit counter ---- */
+var hits = 1337 + Math.floor((Date.now()/60000)%5000);
+function drawHits(){ var s = String(hits).padStart(7,"0"); $("#hits").innerHTML = s.split("").map(function(c){ return "<span>"+c+"</span>"; }).join(""); }
+drawHits(); setInterval(function(){ hits++; drawHits(); }, 7000);
+})();
+</script>
+</body>
+</html>
